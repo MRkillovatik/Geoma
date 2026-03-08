@@ -115,6 +115,7 @@ main {
     0 20px 40px rgba(15, 23, 42, 0.15),
     0 0 0 1px rgba(148, 163, 184, 0.2);
   overflow: hidden;
+  pointer-events: none; /* блокируем взаимодействие с фигурами */
 }
 
 .panel {

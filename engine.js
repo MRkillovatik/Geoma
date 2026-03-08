@@ -73,4 +73,21 @@ function runStep(index) {
   let current = taskData.steps[index];
   if (!current) return;
   current.commands.forEach((cmd) => ggb.evalCommand(cmd));
+  fixAllObjects();
+}
+
+function fixAllObjects() {
+  if (!ggb) return;
+  try {
+    const count = ggb.getObjectNumber();
+    for (let i = 0; i < count; i++) {
+      const name = ggb.getObjectName(i);
+      if (!name) continue;
+      if (typeof ggb.setFixed === "function") {
+        ggb.setFixed(name, true);
+      }
+    }
+  } catch (e) {
+    // игнорируем ошибки фиксации, чтобы не ломать сценарий шагов
+  }
 }

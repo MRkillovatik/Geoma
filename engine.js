@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
 });
 
 function loadTask() {
-  fetch("tasks/triangle1.json")
+  fetch("triangle1.json")
     .then((res) => res.json())
     .then((data) => {
       taskData = data;

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Интерактивная геометрия</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="logo">Интерактивная геометрия</div>
+        <nav class="site-nav">
+          <span class="site-nav-item">Геометрия</span>
+          <span class="site-nav-item">Задача: треугольник</span>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="layout">
+        <!-- GeoGebra апплет -->
+        <div class="main-area">
+          <div id="ggb"></div>
+          <div class="panel">
+            <button id="prevBtn">⬅ Назад</button>
+            <button id="nextBtn">Следующий шаг ➜</button>
+            <button id="resetBtn">Сбросить</button>
+          </div>
+        </div>
+
+        <!-- Правая панель -->
+        <aside class="sidebar">
+          <div class="card" id="givenCard">
+            <div class="title">Дано</div>
+            <div id="given"></div>
+          </div>
+
+          <div class="card" id="analysisCard">
+            <div class="title">Анализ</div>
+            <div id="analysis"></div>
+          </div>
+
+          <div class="card" id="stepsCard">
+            <div class="title">Построение</div>
+            <div id="steps"></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>© 2026 Интерактивная геометрия</span>
+        <span class="site-footer-right">GeoGebra · учебный интерактивный ресурс</span>
+      </div>
+    </footer>
+
+    <script src="engine.js"></script>
+    <script src="ui.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "title": "Построение прямоугольного треугольника",
+  "given": ["Отрезки c и d, c < d"],
+  "analysis": [
+    "Предположим, что треугольник ABC построен.",
+    "AB = c — гипотенуза.",
+    "AC + BC = d.",
+    "Продлим BC и отложим CK = AC.",
+    "Тогда BK = a + b = d.",
+    "Треугольник ACK равнобедренный и прямоугольный.",
+    "Следовательно ∠AKC = 45°."
+  ],
+  "steps": [
+    {
+      "text": "Опускаем из точки M перпендикуляр MK.",
+      "commands": [
+        "K=(0,0)",
+        "dop1=(1,0)",
+        "l=Line(K,dop1)",
+        "M=(0,2)",
+        "Segment(K,M)"
+      ]
+    },
+    {
+      "text": "Строим биссектрису KE.",
+      "commands": ["KE=AngularBisector(M,K,(4,0))"]
+    },
+    {
+      "text": "Откладываем KB = d.",
+      "commands": ["d=4.3", "B=(d,0)", "Segment(K,B)"]
+    },
+    {
+      "text": "Строим окружность с центром B радиуса c.",
+      "commands": ["c=3.3", "circle=Circle(B,c)"]
+    },
+    {
+      "text": "Находим точки пересечения A и A1.",
+      "commands": ["A=Intersect(circle,KE,1)", "A1=Intersect(circle,KE,2)"]
+    },
+    {
+      "text": "Опускаем перпендикуляр AC, ABC - 1 из искомых треугольников.",
+      "commands": [
+        "AC=PerpendicularLine(A,l)",
+        "C=Intersect(AC,l)",
+        "Polygon(A,B,C)"
+      ]
+    },
+    {
+      "text": "Опускаем перпендикуляр A1C1, A1BC1 - 2 из искомых треугольников.",
+      "commands": [
+        "A1C1=PerpendicularLine(A1,l)",
+        "C1=Intersect(A1C1,l)",
+        "Polygon(A1,B,C1)"
+      ]
+    }
+  ]
+}
